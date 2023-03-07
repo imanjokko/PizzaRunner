@@ -31,7 +31,7 @@ Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20q
 
 ---
 # CASE STUDY
-1. [Data Cleaning steps()
+1. [Data Cleaning steps]()
 2. [Part A- Pizza Metrics]()
 4. [Part B- Runner and Customer Experience]()
 5. [Part C- Ingredient Optimisation]()
