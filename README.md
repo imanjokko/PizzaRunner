@@ -35,6 +35,6 @@ Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20q
 2. [Part A- Pizza Metrics]()
 4. [Part B- Runner and Customer Experience]()
 5. [Part C- Ingredient Optimisation]()
-6. [Pricing and Ratings]()
-7. [Bonus DML Challenges (DML = Data Manipulation Language)]()
+6. [Part D- Pricing and Ratings]()
+7. [Part E- Bonus DML Challenges (DML = Data Manipulation Language)]()
 8. [Insights]()
