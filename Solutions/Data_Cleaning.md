@@ -24,9 +24,10 @@ USING NULLIF(extras, 'null')::varchar(4);
 
 
 **Old vs Altered Table**
-	Old table	  		    | 	Altered table
-:-------------------------------------------|----------------------------------------------:
-  ![](customer_orders_old.png)              | ![](customer_orders_altered.png)
+	Old table	  	       | 	Altered table
+:-------------------------------------:|:----------------------------------------------:
+![](https://github.com/imanjokko/PizzaRunner/blob/main/%20customer_orders_old.png)|![](https://github.com/imanjokko/PizzaRunner/blob/67cddbb3c8045c9e65c2cfe40c36ee88a2ee28ce/customer_orders_altered.png)
+---
 
 
 --separate csvs in customer_orders table, extras and exclusion columns
@@ -68,6 +69,8 @@ ALTER COLUMN extras TYPE INTEGER USING (extras::integer);
 SELECT *
 FROM pizza_runner.customerorders_cleaned
 ```
+![](https://github.com/imanjokko/PizzaRunner/blob/main/customerorders_cleaned.png)
+---
 
 ## Runner_orders table
 
@@ -133,3 +136,8 @@ ALTER COLUMN distance_km TYPE FLOAT USING distance_km::float;
 SELECT *
 FROM pizza_runner.runner_orders
 ```
+
+**Old vs Altered Table** 
+		Old Table                  | 	Altered Table
+:----------------------------------------:|:------------------------------------------------:
+![](https://github.com/imanjokko/PizzaRunner/blob/main/runner_orders_old.png)|![](https://github.com/imanjokko/PizzaRunner/blob/main/runner_orders_altered.png)
