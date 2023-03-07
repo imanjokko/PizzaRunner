@@ -25,7 +25,7 @@ USING NULLIF(extras, 'null')::varchar(4);
 
 **Old vs Altered Table**
 	Old table	  		    | 	Altered table
-:-------------------------------------------|----------------------------------------------------------:
+:-------------------------------------------|----------------------------------------------:
   ![](customer_orders_old.png)              | ![](customer_orders_altered.png)
 
 
