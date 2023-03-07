@@ -22,11 +22,11 @@ ALTER COLUMN extras TYPE varchar(4)
 USING NULLIF(extras, 'null')::varchar(4);
 ``` 
 
-#### Old vs New Customer_orders table
 
-	Old table	  			 | 	Altered table
-:------------------------------------------------|------------------------------------------------------------:
-![](https://github.com/imanjokko/PizzaRunner/blob/main/Other_images/%20customer_orders_old.png)|![](https://github.com/imanjokko/PizzaRunner/blob/main/Other_images/customer_orders_altered.png)
+**Old vs Altered Table**
+	Old table	  		| 	Altered table
+:---------------------------------------|------------------------------------------------------------:
+![](customer_orders_old.png)            |![](customer_orders_altered.png)
 
 
 --separate csvs in customer_orders table, extras and exclusion columns
