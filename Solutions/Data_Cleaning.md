@@ -21,6 +21,9 @@ ALTER TABLE pizza_runner.customer_orders
 ALTER COLUMN extras TYPE varchar(4) 
 USING NULLIF(extras, 'null')::varchar(4);
 ```
+	Old table	  			 | 	Altered table
+:------------------------------------------------|------------------------------------------------------------:
+![](https://github.com/imanjokko/PizzaRunner/blob/main/Other_images/%20customer_orders_old.png)|![](https://github.com/imanjokko/PizzaRunner/blob/main/Other_images/customer_orders_altered.png)
 
 
 --separate csvs in customer_orders table, extras and exclusion columns
@@ -57,7 +60,7 @@ ALTER TABLE pizza_runner.customerorders_cleaned
 ALTER COLUMN extras TYPE INTEGER USING (extras::integer);
 ```
 
---viewing all new table
+--viewing new table
 ```
 SELECT *
 FROM pizza_runner.customerorders_cleaned
