@@ -25,9 +25,7 @@ Danny has prepared an entity relationship diagram of his database design, but re
 # Entity Relationship Diagram
 ![](https://github.com/imanjokko/PizzaRunner/blob/main/ERD.png)
 
-This databases uses the star schema model
-
----
+*This databases uses the star schema model*
 Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20query.sql) to see the provided SQL code used to create the database schema, as well as the tables.
 
 ---
