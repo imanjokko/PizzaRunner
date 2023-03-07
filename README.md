@@ -40,5 +40,5 @@ Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20q
 8. [Insights]()
 
 ---
-If you are interested, you can read my [medium article]().
+If you are interested, you can check out my [medium article]().
 Thank you for reading!
