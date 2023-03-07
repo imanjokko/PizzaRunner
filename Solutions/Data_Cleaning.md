@@ -20,7 +20,10 @@ USING NULLIF(extras, '')::varchar(4);
 ALTER TABLE pizza_runner.customer_orders 
 ALTER COLUMN extras TYPE varchar(4) 
 USING NULLIF(extras, 'null')::varchar(4);
-```
+``` 
+
+#### Old vs New Customer_orders table
+
 	Old table	  			 | 	Altered table
 :------------------------------------------------|------------------------------------------------------------:
 ![](https://github.com/imanjokko/PizzaRunner/blob/main/Other_images/%20customer_orders_old.png)|![](https://github.com/imanjokko/PizzaRunner/blob/main/Other_images/customer_orders_altered.png)
