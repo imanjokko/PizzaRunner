@@ -26,7 +26,7 @@ USING NULLIF(extras, 'null')::varchar(4);
 **Old vs Altered Table**
 	Old table	  		    | 	Altered table
 :-------------------------------------------|----------------------------------------------------------:
-![](other_images/customer_orders_old.png)   |![](other_images/customer_orders_altered.png)
+  ![](customer_orders_old.png)              | ![](customer_orders_altered.png)
 
 
 --separate csvs in customer_orders table, extras and exclusion columns
