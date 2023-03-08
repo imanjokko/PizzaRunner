@@ -40,9 +40,9 @@ Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20q
 2. [Part A- Pizza Metrics](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20A-%20Pizza%20Metrics.md)
 4. [Part B- Runner and Customer Experience](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20B-%20Runner%20and%20Customer%20Experience.md)
 5. [Part C- Ingredient Optimisation](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20C-%20Ingredient%20Optimisation.md)
-6. [Part D- Pricing and Ratings]()
+6. [Part D- Pricing and Ratings](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20D-%20Pricing%20and%20Ratings.md)
 7. [Part E- Bonus DML Challenges (DML = Data Manipulation Language)]()
-8. [Recommendations and Conclusion]()
+8. [Recommendations and Conclusion](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20E-%20Bonus%20DML%20Challenges%20(DML%20%3D%20Data%20Manipulation%20Language).md)
 ---
 If you are interested, you can check out my [medium article]().
 Thank you for reading!
