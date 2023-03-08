@@ -176,7 +176,7 @@ GROUP BY runner_id;
 ---
   # Insights
   
-  - Runner 1 had the highest percentage of succesful deliveries
+  - Runner 1 has the highest percentage of succesful deliveries
   - Runner 2 is the fastest rider
   - Customer 105 is the one riders have travelled the most distance for
   - Week 1 had the most runner signups
