@@ -312,6 +312,6 @@ ORDER BY times_used DESC;
   Tomato Sauce  | 4
   
   # Insights
-- The most used ingredients are Mushrooms and Bacon
-- The most common extra is Bacon
-- The most common exclusion is Cheese
+- The most used ingredients are Mushrooms 🍄 and Bacon 🥓
+- The most common extra is Bacon 🥓
+- The most common exclusion is Cheese 🧀
