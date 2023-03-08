@@ -32,12 +32,11 @@ Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20q
 ---
 # CASE STUDY
 1. [Data Cleaning steps](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Data_Cleaning.md)
-2. [Part A- Pizza Metrics]()
-4. [Part B- Runner and Customer Experience]()
+2. [Part A- Pizza Metrics](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20A-%20Pizza%20Metrics.md)
+4. [Part B- Runner and Customer Experience](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20B-%20Runner%20and%20Customer%20Experience.md)
 5. [Part C- Ingredient Optimisation]()
 6. [Part D- Pricing and Ratings]()
 7. [Part E- Bonus DML Challenges (DML = Data Manipulation Language)]()
-8. [Insights]()
 
 ---
 If you are interested, you can check out my [medium article]().
