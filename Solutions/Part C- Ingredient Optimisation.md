@@ -126,7 +126,7 @@ LIMIT 1;
 ~~~
   count | topping_name
 :------:|:--------------:
- cheese | 4
+ 4 	| Cheese
  
 ---
 4. Generate an order item for each record in the customers_orders table in the format of one of the following:
@@ -312,3 +312,6 @@ ORDER BY times_used DESC;
   Tomato Sauce  | 4
   
   # Insights
+- The most used ingredients are Mushrooms and Bacon
+- The most common extra is Bacon
+- The most common exclusion is Cheese
