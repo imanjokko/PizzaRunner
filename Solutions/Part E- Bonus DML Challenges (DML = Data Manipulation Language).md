@@ -4,6 +4,8 @@ If Danny wants to expand his range of pizzas - how would this impact the existin
 Write an INSERT statement to demonstrate what would happen if a new Supreme pizza with all the toppings was added to the Pizza Runner menu?
 
 # Solution
+--insert the new pizza name and id into the pizza_names table
+
 ~~~sql
 INSERT INTO pizza_runner.pizza_names (pizza_id, pizza_name)
 VALUES (3, 'Supreme');
@@ -13,7 +15,9 @@ VALUES (3, 'Supreme');
   1         | Meatlovers
   2         | Vegetarian
   3         | Supreme
-  
+
+--insert the pizza ingredients into the pizza_recipes tables
+
   ~~~sql
 WITH new_pizza_id AS 
   (SELECT pizza_id
