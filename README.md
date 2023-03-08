@@ -43,6 +43,4 @@ Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20q
 6. [Part D- Pricing and Ratings](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20D-%20Pricing%20and%20Ratings.md)
 7. [Part E- Bonus DML Challenges (DML = Data Manipulation Language)](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20E-%20Bonus%20DML%20Challenges%20(DML%20%3D%20Data%20Manipulation%20Language).md)
 8. [Recommendations and Conclusion]()
----
-If you are interested, you can check out my [medium article]().
-Thank you for reading!
+
