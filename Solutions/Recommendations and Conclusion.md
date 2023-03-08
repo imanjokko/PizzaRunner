@@ -11,3 +11,5 @@
 4. To better maximize profits, Danny could look into his overall operations cost. 
  - Are the current procurement methods as cost effective as they could be?
  - Are the pizza and delivery prices right? Taking note of what is leftover after paying runners
+
+Overall, the Pizza Runner HQ seems to be doing fairly well for a new business. There are still a lot of areas to explore and look into from a business standpoint, so I hope I did a good enough job for Danny to call me back when he decides to take the next steps at the Pizza HQ. Till then, eat pizza 🍕 and stay safe!
