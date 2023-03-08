@@ -1,8 +1,8 @@
 1. Look into 
-- What caused restaurant cancellation?
+- What caused restaurant cancellation? There were 2 cancellations, one initiated by the restaurant, and the other by the customer
    - It may be difficult to find out why the customer cancelled, but the restaurant should put a cancellation policy in place that protects all parties, i.e. restaurant, customers, and runners.
-- Why is runner 4 not yet active?
-- What caused delay in the preparation of order 8? And how can it be prevented fom re-occuring?
+- Why is runner 4 not yet active? There are 4 runners, but only runners 1-3 have made any deliveries
+- What caused delay in the preparation and delivery of order number 8?, it had only 1 pizza, and a much higher preparation time than other orders containing just 1 pizza. How can this delay be prevented fom re-occuring?
 
 2. Pizza Runner HQ needs to start with marketing and advertisements, especially with the introduction of the new **Supreme pizza**, it is perfect timing.
 
