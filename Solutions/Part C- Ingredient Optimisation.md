@@ -145,7 +145,7 @@ To solve this question:
 --adding record id column
 ~~~sql
 ALTER TABLE pizza_runner.customer_orders
-ADD COLUMN record_id SERIAL
+ADD COLUMN record_id SERIAL PRIMARY KEY
 
 SELECT *
 FROM pizza_runner.customer_orders;
