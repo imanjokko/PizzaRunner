@@ -42,7 +42,7 @@ Follow [this link](https://github.com/imanjokko/PizzaRunner/blob/main/schema%20q
 5. [Part C- Ingredient Optimisation](https://github.com/imanjokko/PizzaRunner/blob/main/Solutions/Part%20C-%20Ingredient%20Optimisation.md)
 6. [Part D- Pricing and Ratings]()
 7. [Part E- Bonus DML Challenges (DML = Data Manipulation Language)]()
-
+8. [Recommendations and Conclusion]()
 ---
 If you are interested, you can check out my [medium article]().
 Thank you for reading!
