@@ -4,7 +4,7 @@
 
 --changing empty strings and "null" to NULL data type in the exclusions and extras columns
 
-```
+~~~sql
 ALTER TABLE pizza_runner.customer_orders 
 ALTER COLUMN exclusions TYPE varchar(4) 
 USING NULLIF(exclusions, '')::varchar(4);
@@ -20,7 +20,7 @@ USING NULLIF(extras, '')::varchar(4);
 ALTER TABLE pizza_runner.customer_orders 
 ALTER COLUMN extras TYPE varchar(4) 
 USING NULLIF(extras, 'null')::varchar(4);
-``` 
+~~~ 
 
 
 **Old vs Altered Table**
@@ -32,7 +32,7 @@ USING NULLIF(extras, 'null')::varchar(4);
 
 --separate csvs in customer_orders table, extras and exclusion columns
 --creating a **new**, unnested table called **customerorders_cleaned**
-```
+~~~sql
 DROP TABLE IF EXISTS pizza_runner.customerorders_cleaned;
 
 CREATE TABLE pizza_runner.customerorders_cleaned (
@@ -53,29 +53,29 @@ SELECT
   UNNEST(STRING_TO_ARRAY(extras, ',')) AS extras,
   order_time	
 FROM pizza_runner.customer_orders;
-```
+~~~
 
 --cast typing exclusions and extras columns in the new table
-```
+~~~sql
 ALTER TABLE pizza_runner.customerorders_cleaned
 ALTER COLUMN exclusions TYPE INTEGER USING (exclusions::integer);
 
 ALTER TABLE pizza_runner.customerorders_cleaned
 ALTER COLUMN extras TYPE INTEGER USING (extras::integer);
-```
+~~~
 
 --viewing new table
-```
+~~~sql
 SELECT *
 FROM pizza_runner.customerorders_cleaned
-```
+~~~
 ![](https://github.com/imanjokko/PizzaRunner/blob/main/images/customersordercsv.png)
 ---
 
 ## Runner_orders table
 
 --changing empty strings and "null" to NULL data type in various columns in the runner_orders table
-```
+~~~sql
 ALTER TABLE pizza_runner.runner_orders
 ALTER COLUMN pickup_time TYPE varchar(19) 
 USING NULLIF(pickup_time, 'null')::varchar(19),
@@ -91,18 +91,19 @@ USING CASE
 		 OR cancellation = 'Nan' THEN NULL
          ELSE NULLIF(cancellation, '') 
        END::varchar(23);
-```
+~~~
 
 --changing pickup_time column to the correct data type
-```
+~~~sql
 ALTER TABLE pizza_runner.runner_orders
 ALTER COLUMN pickup_time TYPE timestamp 
 USING to_timestamp(pickup_time, 'YYYY-MM-DD HH24:MI:SS');
-```
+~~~
 
 --making the values in the distance and duration columns respectively consistent
 --renaming the distance and duration columns respectively
-```ALTER TABLE pizza_runner.runner_orders
+~~~sql
+ALTER TABLE pizza_runner.runner_orders
 RENAME COLUMN distance TO distance_km
 
 ALTER TABLE pizza_runner.runner_orders
@@ -113,29 +114,29 @@ SET duration_mins = REPLACE(REPLACE(REPLACE(duration_mins, 'mins', ''), 'minutes
 
 UPDATE pizza_runner.runner_orders
 SET distance_km = REPLACE(distance_km, 'km', '')
-```
+~~~
 
 --trimming white spaces
-```
+~~~sql
 UPDATE pizza_runner.runner_orders
 SET duration_mins = TRIM(duration_mins), distance_km = TRIM(distance_km)
-```
+~~~
 
 --changing data type IN the distance and duration columns
-```
+~~~sql
 ALTER TABLE pizza_runner.runner_orders
 ALTER COLUMN duration_mins TYPE INTEGER USING duration_mins::integer;
 
 ALTER TABLE pizza_runner.runner_orders
 ALTER COLUMN distance_km TYPE FLOAT USING distance_km::float;
-```
+~~~
 
 --viewing all changes
 
-```
+~~~sql
 SELECT *
 FROM pizza_runner.runner_orders
-```
+~~~
 
 **Old vs Altered Table** 
 		Old Table                  | 	Altered Table
