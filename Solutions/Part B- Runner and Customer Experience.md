@@ -81,8 +81,8 @@ GROUP BY num_pizzas
   2         | 00:18:22
   1         | 00:12:21
  
-- The anwer is yes, ON AVERAGE, there appears to be a relationship between the pizza numbers and delivery time.
-  -  **But this is not to be mistaken for causation**
+- The answer is yes; ON AVERAGE, there appears to be a positive relationship (correlation) between the pizza numbers and delivery time.
+  -  **However, this is not to be mistaken for causation**
 ---
 4. What was the average distance travelled for each customer?
 ~~~sql
