@@ -1,3 +1,4 @@
+# Recommendations
 1. Look into 
 - What caused restaurant cancellation? There were 2 cancellations, one initiated by the restaurant, and the other by the customer
    - It may be difficult to find out why the customer cancelled, but the restaurant should put a cancellation policy in place that protects all parties, i.e. restaurant, customers, and runners.
@@ -12,4 +13,5 @@
  - Are the current procurement methods as cost effective as they could be?
  - Are the pizza and delivery prices right? Taking note of what is leftover after paying runners
 
+# Conclusion
 Overall, the Pizza Runner HQ seems to be doing fairly well for a new business. There are still a lot of areas to explore and look into from a business standpoint, so I hope I did a good enough job for Danny to call me back when he decides to take the next steps at the Pizza HQ. Till then, eat pizza 🍕 and stay safe!
