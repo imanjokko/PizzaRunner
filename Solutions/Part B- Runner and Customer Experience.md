@@ -26,7 +26,8 @@ ORDER BY week_start;
 2. What was the average time in minutes it took for each runner to arrive at the Pizza Runner HQ to pickup the order?
 ~~~sql
 SELECT runner_id, avg(time_to_arrival) as avg_arrival_time
-FROM (SELECT r.runner_id, (r.pickup_time - c.order_time) AS time_to_arrival
+FROM 
+	(SELECT r.runner_id, (r.pickup_time - c.order_time) AS time_to_arrival
 FROM pizza_runner.runner_orders r
 INNER JOIN pizza_runner.customer_orders c
 ON r.order_id = c.order_id) as arrival_time
@@ -42,10 +43,11 @@ GROUP BY runner_id
 
    --viewing prep time per order
  ~~~sql
-SELECT c.order_id, count (*) as num_pizzas, (r.pickup_time - c.order_time) AS time_to_prepare
+SELECT c.order_id, count (*) as num_pizzas, 
+	(r.pickup_time - c.order_time) AS time_to_prepare
 FROM pizza_runner.runner_orders r
 INNER JOIN pizza_runner.customer_orders c
-	ON r.order_id = c.order_id
+ON r.order_id = c.order_id
 WHERE r.pickup_time IS NOT NULL
 GROUP BY c.order_id, r.pickup_time, c.order_time
 ~~~
@@ -63,7 +65,9 @@ GROUP BY c.order_id, r.pickup_time, c.order_time
  --looking at the average prep time by amount of pizzas in the order
 ~~~sql
 SELECT num_pizzas, AVG(time_to_prepare) AS avg_prep_time
-FROM (SELECT c.order_id, count (*) AS num_pizzas, (r.pickup_time - c.order_time) AS time_to_prepare
+FROM 
+	(SELECT c.order_id, count (*) AS num_pizzas, 
+	(r.pickup_time - c.order_time) AS time_to_prepare
 	FROM pizza_runner.runner_orders r
 	INNER JOIN pizza_runner.customer_orders c
 	ON r.order_id = c.order_id
@@ -77,7 +81,7 @@ GROUP BY num_pizzas
   2         | 00:18:22
   1         | 00:12:21
  
-- The is yes, ON AVERAGE, there appears to be a relationship between the pizza numbers and delivery time.
+- The anwer is yes, ON AVERAGE, there appears to be a relationship between the pizza numbers and delivery time.
   -  **But this is not to be mistaken for causation**
 ---
 4. What was the average distance travelled for each customer?
@@ -85,7 +89,7 @@ GROUP BY num_pizzas
 SELECT c.customer_id, CEIL(AVG(r.distance_km)) as avg_distance_km
 FROM pizza_runner.customer_orders c
 INNER JOIN pizza_runner.runner_orders r
-	ON c.order_id = r.order_id
+ON c.order_id = r.order_id
 WHERE r.cancellation IS NULL
 GROUP BY c.customer_id
 ~~~
