@@ -26,9 +26,9 @@ FROM
 		CASE WHEN c.pizza_id = 1 THEN 12 ELSE 10 END AS price
 	 FROM pizza_runner.customer_orders c
 	 INNER JOIN pizza_runner.pizza_names pn
-	 ON c.pizza_id = pn.pizza_id
+   	 ON c.pizza_id = pn.pizza_id
 	 INNER JOIN pizza_runner.runner_orders r
-	 ON c.order_id = r.order_id
+   	 ON c.order_id = r.order_id
 	 WHERE r.cancellation IS NULL) AS prices
 ~~~
  usd_made
@@ -129,9 +129,9 @@ SELECT
   COUNT(c.order_id) AS pizza_count
 FROM pizza_runner.customer_orders c
 JOIN pizza_runner.runner_orders r 
-  ON r.order_id = c.order_id
+   ON r.order_id = c.order_id
 JOIN pizza_runner.runner_ratings rr
-ON rr.order_id = c.order_id
+   ON rr.order_id = c.order_id
 GROUP BY 
   c.customer_id,
   c.order_id,
@@ -152,9 +152,9 @@ FROM
 		CASE WHEN c.pizza_id = 1 THEN 12 ELSE 10 END AS price
 	 FROM pizza_runner.customer_orders c
 	 INNER JOIN pizza_runner.pizza_names pn
-	 ON c.pizza_id = pn.pizza_id
+   	 ON c.pizza_id = pn.pizza_id
 	 INNER JOIN pizza_runner.runner_orders r
-	 ON c.order_id = r.order_id
+   	 ON c.order_id = r.order_id
 	 WHERE r.cancellation IS NULL) AS prices),
 expenses AS 
 	(SELECT SUM (driver_payments) AS total_driver_payments
