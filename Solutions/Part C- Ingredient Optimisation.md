@@ -64,7 +64,7 @@ CROSS JOIN LATERAL
   unnest(string_to_array(pr.toppings, ',')) t(value)
 JOIN
   (SELECT DISTINCT topping_id, topping_name FROM pizza_runner.pizza_toppings) pt
-ON CAST(TRIM(t.value) AS INTEGER) = pt.topping_id
+  ON CAST(TRIM(t.value) AS INTEGER) = pt.topping_id
 GROUP BY pr.pizza_id, t.value, pt.topping_name
 ORDER BY pr.pizza_id;
 
@@ -103,7 +103,7 @@ SELECT COUNT (coc.extras),
 		pt.topping_name
 FROM pizza_runner.customerorders_cleaned AS coc
 INNER JOIN pizza_runner.pizza_toppings AS pt
-ON coc.extras = pt.topping_id
+  ON coc.extras = pt.topping_id
 GROUP BY extras, topping_name
 ORDER BY count DESC
 LIMIT 1;
@@ -119,7 +119,7 @@ SELECT COUNT (coc.exclusions),
 		pt.topping_name
 FROM pizza_runner.customerorders_cleaned AS coc
 INNER JOIN pizza_runner.pizza_toppings AS pt
-ON coc.exclusions = pt.topping_id
+  ON coc.exclusions = pt.topping_id
 GROUP BY exclusions, topping_name
 ORDER BY count DESC
 LIMIT 1;
@@ -162,7 +162,7 @@ e.record_id,
 'Extra ' || STRING_AGG(t.topping_name, ', ') AS record_options
 FROM extrasBreak AS e
 JOIN pizza_runner.pizza_toppings AS t
-ON e.extra_id = t.topping_id
+  ON e.extra_id = t.topping_id
 GROUP BY e.record_id),
 cteExclusions AS 
 (SELECT
@@ -170,7 +170,7 @@ e.record_id,
 'Exclusion ' || STRING_AGG(t.topping_name, ', ') AS record_options
 FROM exclusionsBreak AS e
 JOIN pizza_runner.pizza_toppings AS t
-ON e.exclusions_id = t.topping_id
+  ON e.exclusions_id = t.topping_id
 GROUP BY e.record_id),
 cteUnion AS 
 (SELECT * FROM cteExtras
@@ -186,9 +186,9 @@ c.order_time,
 CONCAT_WS(' - ', p.pizza_name, STRING_AGG(u.record_options, ' - ')) AS pizza_info
 FROM pizza_runner.customer_orders c
 LEFT JOIN cteUnion u
-ON c.record_id = u.record_id
+  ON c.record_id = u.record_id
 JOIN pizza_runner.pizza_names p
-ON c.pizza_id = p.pizza_id
+  ON c.pizza_id = p.pizza_id
 GROUP BY
 c.record_id,
 c.order_id,
@@ -225,10 +225,14 @@ WITH ingredients AS (
     END AS topping
   FROM 
     pizza_runner.customer_orders co
-    LEFT JOIN pizza_runner.pizza_names pn ON co.pizza_id = pn.pizza_id
-    LEFT JOIN pizza_runner.pizza_recipes pr ON co.pizza_id = pr.pizza_id
-    LEFT JOIN unnest(string_to_array(pr.toppings, ',')) AS t(topping_id) ON TRUE
-    LEFT JOIN pizza_runner.pizza_toppings pt ON t.topping_id::int = pt.topping_id
+    LEFT JOIN pizza_runner.pizza_names pn 
+      ON co.pizza_id = pn.pizza_id
+    LEFT JOIN pizza_runner.pizza_recipes pr 
+      ON co.pizza_id = pr.pizza_id
+    LEFT JOIN unnest(string_to_array(pr.toppings, ',')) AS t(topping_id) 
+      ON TRUE
+    LEFT JOIN pizza_runner.pizza_toppings pt 
+      ON t.topping_id::int = pt.topping_id
   WHERE 
     NOT EXISTS 
 	(SELECT 1 
