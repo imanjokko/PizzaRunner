@@ -10,7 +10,8 @@
 # Solutions
 1. How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
 ~~~sql
-SELECT date_part('week', registration_date +INTERVAL '3 days') AS week_start, COUNT(*) AS num_signups
+SELECT date_part('week', registration_date +INTERVAL '3 days') AS week_start, 
+	COUNT(*) AS num_signups
 FROM pizza_runner.runners
 GROUP BY week_start
 ORDER BY week_start;
@@ -47,7 +48,7 @@ SELECT c.order_id, count (*) as num_pizzas,
 	(r.pickup_time - c.order_time) AS time_to_prepare
 FROM pizza_runner.runner_orders r
 INNER JOIN pizza_runner.customer_orders c
-ON r.order_id = c.order_id
+	ON r.order_id = c.order_id
 WHERE r.pickup_time IS NOT NULL
 GROUP BY c.order_id, r.pickup_time, c.order_time
 ~~~
@@ -68,11 +69,11 @@ SELECT num_pizzas, AVG(time_to_prepare) AS avg_prep_time
 FROM 
 	(SELECT c.order_id, count (*) AS num_pizzas, 
 	(r.pickup_time - c.order_time) AS time_to_prepare
-	FROM pizza_runner.runner_orders r
-	INNER JOIN pizza_runner.customer_orders c
+FROM pizza_runner.runner_orders r
+INNER JOIN pizza_runner.customer_orders c
 	ON r.order_id = c.order_id
-	WHERE r.pickup_time IS NOT NULL
-	GROUP BY c.order_id, r.pickup_time, c.order_time) AS prep_time
+WHERE r.pickup_time IS NOT NULL
+GROUP BY c.order_id, r.pickup_time, c.order_time) AS prep_time
 GROUP BY num_pizzas
 ~~~
  num_pizzas | avg_prep_time
@@ -89,7 +90,7 @@ GROUP BY num_pizzas
 SELECT c.customer_id, CEIL(AVG(r.distance_km)) as avg_distance_km
 FROM pizza_runner.customer_orders c
 INNER JOIN pizza_runner.runner_orders r
-ON c.order_id = r.order_id
+	ON c.order_id = r.order_id
 WHERE r.cancellation IS NULL
 GROUP BY c.customer_id
 ~~~
