@@ -47,7 +47,10 @@ GROUP BY runner_id;
 ~~~sql
 SELECT pizza_id, count(*) as num_delivered
 FROM pizza_runner.customer_orders
-WHERE order_id IN (SELECT order_id FROM pizza_runner.runner_orders WHERE cancellation IS NULL)
+WHERE order_id IN 
+    (SELECT order_id
+    FROM pizza_runner.runner_orders 
+    WHERE cancellation IS NULL)
 GROUP BY pizza_id
 ORDER BY pizza_id;
 ~~~
@@ -60,12 +63,13 @@ ORDER BY pizza_id;
 ~~~sql
 SELECT 
     c.customer_id, 
-    COUNT(CASE WHEN p.pizza_name = 'Vegetarian' THEN 1 ELSE NULL END) AS vegetarian_count,
-    COUNT(CASE WHEN p.pizza_name = 'Meatlovers' THEN 1 ELSE NULL END) AS meatlovers_count
-FROM 
-    pizza_runner.customer_orders c
-    JOIN pizza_runner.pizza_names p 
-	ON c.pizza_id = p.pizza_id
+    COUNT(CASE WHEN p.pizza_name = 'Vegetarian' 
+    THEN 1 ELSE NULL END) AS vegetarian_count,
+    COUNT(CASE WHEN p.pizza_name = 'Meatlovers' 
+    THEN 1 ELSE NULL END) AS meatlovers_count
+FROM pizza_runner.customer_orders c
+JOIN pizza_runner.pizza_names p 
+  ON c.pizza_id = p.pizza_id
 GROUP BY c.customer_id;
 ~~~
  customer_id     | vegetarian_count   |  meatlovers_count
@@ -81,8 +85,8 @@ GROUP BY c.customer_id;
 SELECT COUNT (*) as max_pizzas_del
 FROM pizza_runner.customer_orders c
 JOIN pizza_runner.runner_orders r
-	ON c.order_id = r.order_id
-	WHERE r.cancellation IS NULL
+  ON c.order_id = r.order_id
+WHERE r.cancellation IS NULL
 GROUP BY c.order_id
 ORDER BY count(*) DESC
 LIMIT 1
@@ -99,14 +103,12 @@ SELECT
   	THEN 1 END) AS changed_orders,
   COUNT(CASE WHEN c.exclusions IS NULL AND c.extras IS NULL
   	THEN 1 END) AS unchanged_orders
-FROM 
-  pizza_runner.customer_orders c
-  JOIN pizza_runner.runner_orders r ON c.order_id = r.order_id
-  WHERE r.cancellation IS NULL
-GROUP BY 
-  c.customer_id
-ORDER BY 
-  c.customer_id;
+FROM pizza_runner.customer_orders c
+JOIN pizza_runner.runner_orders r
+  ON c.order_id = r.order_id
+WHERE r.cancellation IS NULL
+GROUP BY c.customer_id
+ORDER BY c.customer_id;
   ~~~
   customer_id   |  changed_orders   | unchanged_orders
  :-------------:|:-----------------:|:------------------:
@@ -121,7 +123,7 @@ ORDER BY
 SELECT COUNT(*)
 FROM pizza_runner.customer_orders c
 JOIN pizza_runner.runner_orders r
-ON c.order_id = r.order_id
+  ON c.order_id = r.order_id
 WHERE c.exclusions IS NOT NULL 
 	AND c.extras IS NOT NULL
 	AND r.cancellation IS NULL
@@ -150,7 +152,8 @@ ORDER BY hour;
  ---
  10. What was the volume of orders for each day of the week?
 ~~~sql
-SELECT TO_CHAR(order_time, 'Day') AS day_of_week, COUNT(*) AS dow_order_volume
+SELECT TO_CHAR(order_time, 'Day') AS day_of_week, 
+  COUNT(*) AS dow_order_volume
 FROM pizza_runner.customer_orders
 GROUP BY day_of_week;
 ~~~
