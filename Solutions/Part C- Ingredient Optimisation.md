@@ -167,7 +167,7 @@ GROUP BY e.record_id),
 cteExclusions AS 
 (SELECT
 e.record_id,
-'Exclusion ' || STRING_AGG(t.topping_name, ', ') AS record_options
+'Exclude ' || STRING_AGG(t.topping_name, ', ') AS record_options
 FROM exclusionsBreak AS e
 JOIN pizza_runner.pizza_toppings AS t
   ON e.exclusions_id = t.topping_id
