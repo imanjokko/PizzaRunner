@@ -136,7 +136,7 @@ GROUP BY c.pizza_id
 9. What was the total volume of pizzas ordered for each hour of the day?
 ~~~sql
 SELECT DATE_PART('hour', order_time) AS hour, 
-  count(*) AS volume_per_hour
+  COUNT(*) AS volume_per_hour
 FROM pizza_runner.customer_orders
 GROUP BY hour
 ORDER BY hour;
